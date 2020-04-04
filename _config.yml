@@ -1,1 +1,4 @@
 theme: jekyll-theme-cayman
+title: Predicting Soccer Match Outcomes
+description: A look at past year's World Cup matches and their outcomes to find important stats that may help predict the winners of future matches.
+
