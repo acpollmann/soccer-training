@@ -1,37 +1,24 @@
-## Welcome to GitHub Pages
+### Team Members: Felipe Godoy, Andrew Gauker, Amy Pollman, Hetu Patel, Nouzhan Vakili Dastjerd
 
-You can use the [editor on GitHub](https://github.com/acpollmann/soccer-training/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+# Introduction
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Background:
 
-### Markdown
+Throughout history, sports have played an integral part in societies worldwide. In contemporary times, soccer reigns supreme as the world's most popular sport. Consequently, billions of fans all over the globe know dozens of teams, many players, and all their individual playing statistics. In a world where we are growing increasingly more divided, soccer remains one of the few pastimes that unites people across all boundaries. With over 3.6 billion viewers and half the world's population tuned into the 2018 World Cup, soccer's global importance is undeniable.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### What's the Problem?
 
-```markdown
-Syntax highlighted code block
+Despite many fans having an unwavering dedication to the sport, there are so many different characteristics and playing statistics that make up any given team's performance. It follows then that knowing what team may win a match is entirely difficult to confidently predict beforehand.
 
-# Header 1
-## Header 2
-### Header 3
+### Why Is This Important?
 
-- Bulleted
-- List
+A model that accurately predicts a game's outcome as well as the most important playing statistics gives teams useful insights into how to alter their strategies, training, and game performance. This will allow teams to better their chances of winning and create even more dynamic gameplay for fans across the world. For both the sake of the teams and their fans, there is much value to be found in a model that is able to analyze what statistics matter the most and can then accurately predict the outcome of any given match. 
 
-1. Numbered
-2. List
+### What's Our Goal?
 
-**Bold** and _Italic_ and `Code` text
+We are analyzing the most important statistics that correlate the strongest with winning a soccer match and using the data from previous World Cup's (2010, 2014, and 2018) to predict the outcomes of future soccter matches.
 
-[Link](url) and ![Image](src)
-```
+# Data
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Where Did We Get Our Dataset?
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/acpollmann/soccer-training/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
