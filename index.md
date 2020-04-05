@@ -23,11 +23,11 @@ We are analyzing the most important statistics that correlate the strongest with
 Our data was originally obtained from Zenodo and consisted of three individual datasets corresponding to the past 3 World Cup games in 2010, 2014, and 2018 respectively. Each dataset originally contained hundreds of datapoints, each one representing a player that participated in that World Cup, with the features being their playing statistics. To see the original 2010 World Cup dataset, see [raw_2010.csv.](https://github.com/acpollmann/soccer-training/blob/master/raw_2010.csv)
 
 
-[insert original dataset pic]
+![alt text](https://github.com/acpollmann/soccer-training/blob/master/images/raw_2010.png)
 
 During pre-processing, we cleaned by aggregating all the player values by teams, so that we no longer had to deal with individual players as our datapoints. We also removed some unnecessary features and included some interesting ones directly from FIFA's own site. To conclude our pre-processing, we simply combined all three respective datasets into one and added a "year" feature to every datapoint.
 
-[insert cleaned & combined dataset pic]
+![alt text](https://github.com/acpollmann/soccer-training/blob/master/images/cleaned_combined.png)
 
 
 During preproces cleaned each to include only the aggregate values for each team participating  This processing gave us the dataset we used to conduct the rest of our project. To see our processed and cleaned dataset, see [clean_combined_data.csv.](https://github.com/acpollmann/soccer-training/blob/master/clean_combined_data.csv)
