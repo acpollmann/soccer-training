@@ -25,9 +25,9 @@ Our data was originally obtained from Zenodo and consisted of three individual d
 
 ![raw_2010.png](https://raw.githubusercontent.com/acpollmann/soccer-training/master/images/raw_2010.png)
 
-During pre-processing, we cleaned by aggregating all the player values by teams, so that we no longer had to deal with individual players as our datapoints. We also removed some unnecessary features and included some interesting ones directly from FIFA's own site. To conclude our pre-processing, we simply combined all three respective datasets into one and added a "year" feature to every datapoint.
+During pre-processing, we cleaned the datasets by aggregating all the player values by teams, so that we no longer had to deal with individual players as our datapoints. We also removed some unnecessary features and included some interesting ones directly from FIFA's own site. To conclude our pre-processing, we simply combined all three respective datasets into one and added a "year" feature to every datapoint.
 
-During preproces cleaned each to include only the aggregate values for each team participating  This processing gave us the dataset we used to conduct the rest of our project. To see our processed and cleaned dataset, see [clean_combined_data.csv.](https://github.com/acpollmann/soccer-training/blob/master/clean_combined_data.csv)
+This entire process gave us the dataset we used to conduct the rest of our project. To see our processed and cleaned dataset, see [clean_combined_data.csv](https://github.com/acpollmann/soccer-training/blob/master/clean_combined_data.csv) as well as a preview in the image below.
 
 ![cleaned_combined.png](https://raw.githubusercontent.com/acpollmann/soccer-training/master/images/cleaned_combined.png)
 
