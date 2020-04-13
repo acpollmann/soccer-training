@@ -1,3 +1,7 @@
+---
+htmlwidgets: true
+---
+
 #### **Team Members: Felipe Godoy, Andrew Gauker, Amy Pollman, Hetu Patel, Nouzhan Vakili Dastjerd**
 
 # **Introduction**
@@ -12,7 +16,7 @@ Despite many fans having an unwavering dedication to the sport, there are so man
 
 ### Why Is This Important?
 
-A model that accurately predicts a game's outcome as well as the most important playing statistics gives teams useful insights into how to alter their strategies, training, and game performance. This will allow teams to better their chances of winning and create even more dynamic gameplay for fans across the world. For both the sake of the teams and their fans, there is much value to be found in a model that is able to analyze what statistics matter the most and can then accurately predict the outcome of any given match. 
+A model that accurately predicts a game's outcome as well as the most important playing statistics gives teams useful insights into how to alter their strategies, training, and game performance. This will allow teams to better their chances of winning and create even more dynamic gameplay for fans across the world. For both the sake of the teams and their fans, there is much value to be found in a model that is able to analyze what statistics matter the most and can then accurately predict the outcome of any given match.
 
 ### What's Our Goal?
 
@@ -40,7 +44,7 @@ Our final, cleaned dataset consists of 384 datapoints and 27 features. Our featu
 
 We will use a random forest classifier, which randomly selects subsets of features from the dataset and uses gini impurity metric to estimate the likelihood of an incorrect classification of the datapoint under a model trained just on that subset of features. From using this process on several random subsets of features, the model provides the feature’s impurity scores, which we will then use to select the features that greatly correlate to a proper classification of match result.
 
-After identifying the most significant features we will use supervised learning to train a random forest model, as well as serveral other models, to predict the outcome of a match given a certain set of values for each feature. 
+After identifying the most significant features we will use supervised learning to train a random forest model, as well as serveral other models, to predict the outcome of a match given a certain set of values for each feature.
 
 ### Why Do We Believe Our Approach Will Solve Our Problem?
 
