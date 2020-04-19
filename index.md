@@ -50,7 +50,7 @@ We chose a random forest classifier because it performs classification jobs well
 Before tackling the machine learning predictions, we did some data analysis to understand trends in our data and deepen our understanding of our dataset. 
 
 First, we did a simple feature analysis to see how correlated our features were to match outcome.
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/25.embed" height="300" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/25.embed" height="525" width="100%"></iframe>
 
 We chose to do the same with final position in the tournament.
 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/23.embed" height="525" width="100%"></iframe>
@@ -64,11 +64,6 @@ We also analyzed the FIFA Rank with respect to final position by country. Nation
 ### How did we evaluate our approach?
 
 To tackle our problem, we used a multi-headed approach. After preprocessing our data, we conducted several different supervised learning models, ranging from the aforementioned Random Forest to Neural Networks. In the following sections, you will read about our most successful approaches. After setting up the varying different models and appropriately managing our data to allow for the subsequent processing, we chose the top three models in terms of prediction accuracy to dive into more detail.
-
-First, we did a simple feature analysis to see how correlated our features were to match outcome.
-
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/3.embed" height="525" width="100%"></iframe>
-
  
 The results of a game can either be “Win,” “Lose,” or “Draw.” Since we are looking at the FIFA World Cup it is largely in a team’s favor to “Win” rather than “Lose or Draw.” As a result, our classification models have been split into two groups: binary and ternary models. We’ve tested our model using Random Forest, Neural Network, Linear Regression, Ridge Regression, Gaussian Naïve Bayes, SVM, XGBoost Classifier, and an AdaBoost Classifier. For each, we’ve run cross validation, multiple variations of parameters, data splits, and number of features used. We also applied Principal Component Analysis, Linear Discriminant Analysis, Neighborhood Component Analysis, and Multi-Layer Perceptron as additions to our classifiers in some cases. After thoroughly testing various classifiers and applying different parameter combinations, the top 3 based on test accuracy were the binary SVM, the binary Neural Network, and the binary XGBoost Classifier. With SVM we were able to accurately predict our test results 75% of the time. The Neural Network with an MLP Classification operated at 75% accuracy, while the XGBoost Classifier achieved an accuracy score of 69%. Here is a summary of our results: 
 
@@ -86,6 +81,7 @@ We implemented a 30:70 test to train split on the data. Using the sklearn’s St
 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/28.embed" height="525" width="100%"></iframe>
 Feature importance analysis
 
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/29.embed" height="525" width="100%"></iframe>
 
 ### How did it compare?
 Now that we understand Random Forests, both generally and in our specific use case, this leaves the key question: why did our Random Forest approach fail? In our case, we can trace the failure to two key problems: lack of data, and the intrinsic difficulty in predicting sports matches. Let’s start with the first issue, a lack of data. Our dataset consisted of only about 300 datapoints. For any sort of machine learning algorithm, this is a tiny amount of data. This made any sort of training, even with a Random Forest that specializes on small datasets, rather difficult. Expanding our dataset further, which we did several times, eventually reached a limit. Finding all the features we needed for past World Cups was not feasible beyond a point due the lack of historic catalogs and data to begin with. The second reason our Random Forest failed is the intrinsic difficulty in predicting a sports match. As Felipe put it, “If there were a good model to predict games with a near perfect accuracy, there’d be no point in playing the games.” The number of variables, measurable and immeasurable, that lead to one team’s victory over another is absolutely expansive. Unfortunately, these two issues coupled together led to the failure of the Random Forest for our World Cup prediction model.
@@ -130,7 +126,7 @@ A Support Vector Machine (SVM) is an algorithm designed to find a hyperplane or 
 ### How did we implement it?
 For our support vector machine implementation, we first split our dataset into 30% testing and 70% training. Then, we standardized the features, removing the mean and scaling them all to unit variance. Finally, we used the training data to fit an scikit-learn SVC object (which is an implementation of a support vector machine for classification), observing the 5-fold cross validation scores to determine the the best kernel to use and the best value for the model’s regularization hyperparameterC. 
 
-Initially, our analysis determined that a linear kernel with C=1.1 was the best, yielding a cross validation score of 0.600 and a testing score of 0.595. We can then apply LDA to reduce our dataset to two features.
+Initially, our analysis determined that a linear kernel with C = 1.1 was the best, yielding a cross validation score of 0.600 and a testing score of 0.595. We can then apply LDA to reduce our dataset to two features.
 
 Performing the same analysis as before on both of these reduced datasets, our new best hyperparameters for ternary classification were a radial basis function kernel with C=0.55, which yield a cross validation score of 0.657 and a testing score of 0.647! This is a 5% improvement, by using 2 features instead of 22! 
 
