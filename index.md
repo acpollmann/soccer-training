@@ -50,7 +50,7 @@ We chose a random forest classifier because it performs classification jobs well
 Before tackling the machine learning predictions, we did some data analysis to understand trends in our data and deepen our understanding of our dataset. 
 
 First, we did a simple feature analysis to see how correlated our features were to match outcome.
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/25.embed" height="525" width="100%"></iframe>
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/25.embed" height="300" width="100%"></iframe>
 
 We chose to do the same with final position in the tournament.
 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/23.embed" height="525" width="100%"></iframe>
