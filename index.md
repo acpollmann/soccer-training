@@ -156,3 +156,14 @@ Of all the classifiers applied to our model, SVM ranks the best in both binary a
 
 # **Conclusion**
 As we reach the end of our project, it is important to take a look at where we started. Our initial proposal, drafted months ago, stated that we would train a model using the Random Forest classifier to predict World Cup matches given data from the past three World Cups. In reality, we trained several different types of classifiers, all with varying results. But more paramount than our proposal is our goal: can we successfully train a model to predict World Cup matches? With all the models we trained, our highest accuracy achieved was 77.6% for binary classifciation and 64.6% for ternary classification. Although not perfect, it is a much better predictor than a random guess which would be around 50% and 33% respectively. Given the nature of these games as being inherently difficult to predict, as well as the fact that this was our first foray into machine learning, we would say that our predictions are a success!
+
+
+# **References**
+
+Bunker, Rory P., and Fadi Thabtah. “A Machine Learning Framework for Sport Result Prediction.” Applied Computing and Informatics, vol. 15, no. 1, Jan. 2019, pp. 27–33., doi:10.1016/j.aci.2017.09.005.
+
+Kapadia, Kumash, et al. “Sport Analytics for Cricket Game Results Using Machine Learning: An Experimental Study.” Applied Computing and Informatics, 21 Nov. 2019, doi:10.1016/j.aci.2019.11.006.
+
+Mccabe, Alan, and Jarrod Trevathan. “Artificial Intelligence in Sports Prediction.” Fifth International Conference on Information Technology: New Generations (Itng 2008), 18 Apr. 2008, pp. 1194-1197., doi:10.1109/itng.2008.203.
+
+Ulmer, Ben, Matthew Fernandez, and Michael Peterson. "Predicting soccer match results in the English Premier League." PhD diss., Ph. D. thesis, Doctoral dissertation, Ph. D. dissertation, Stanford, 2013.
