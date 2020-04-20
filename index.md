@@ -135,6 +135,7 @@ For our support vector machine implementation, we first split our dataset into 3
 Initially, our analysis determined that a linear kernel with C=1.1 was the best, yielding a testing score of 59.5%. We can then apply LDA to reduce our dataset to two features.
 
 Performing the same analysis as before on both of these reduced datasets, our new best hyperparameters for ternary classification were a radial basis function kernel with C=0.55, which yield a testing score of 64.6%! This is a 5% improvement, by using 2 features instead of 22! 
+
 Confusion matrix for ternary classification using SVM with LDA:
 <img src="https://raw.githubusercontent.com/acpollmann/soccer-training/master/images/rbfSVCConfMatrix.png" width="500">
 
@@ -146,7 +147,7 @@ The round shape of the model’s learned decision boundaries are due to the radi
 
 Now, for binary classification, LDA will always compress the dataset into one feature. Performing a similar cross validation analysis on this single feature dataset, we found that the best hyperparameters for deciding between “Win” and “Not Win” were a linear kernel with C=0.45, which yields a testing accuracy of 75.0%! It’s incredible that we can achieve this accuracy by looking at a single feature! These binary classification results are on par with our Neural Net’s performance.
 
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/39.embed" height="525" width="400"></iframe> 
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/39.embed" height="525" width="100%"></iframe> 
 
 
 ### How did it compare?
