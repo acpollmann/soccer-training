@@ -102,7 +102,9 @@ Determined to see if we could do better, we seeked guidance from our instructor 
 
 By performing our analysis again with the LDA-reduced dataset, we managed a slight improvement to a testing score of 63.8%, with the same activation and number of hidden layers, but with a regularization of ⍺=1.1.
 
-However, for binary classification, LDA did not seem to improve our accuracy. We think this is because neural networks strive in larger feature spaces, so training one on a single feature might not yield the best results.
+However, for binary classification, LDA did not seem to improve our accuracy. We think this is because neural networks strive in larger feature spaces, so training one on a single feature might not yield the best results. Below is a summary of our results. 
+
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/37.embed" height="525" width="100%"></iframe>
 
 ### How did it compare?
 Compared to our performance results with the other classifiers, the Neural Network was consistently one of the best across both ternary and binary classifications. The ternary classification using Neural Networks returned with a test accuracy of 62.9%, while the binary was 75.0%. These results make the Neural Network the second-best performing classifier after SVM. The success of this model can be attributed to the use of the MLP Classifier and finding the optimal hidden layer and  value for both classifications. Despite being one of our best models, the Neural Network was limited when applied on to our ternary labels: “Draw”, “Win” or “Lose.” In none of the runs were we able to classify a game either correctly or incorrectly as a “Draw.” This is likely due to our small sized dataset and the limited number of games ending in a “Draw”. There is a smaller number of neural interconnections occurring within our dataset than others. On the other hand, we can see this model’s success in the binary classification where we remove the small “Draw” label and increase the size of another larger label. Overall, the Neural Network was a promising model and one that we are satisfied using to predict our game outcomes. 
@@ -132,10 +134,13 @@ Performing the same analysis as before on both of these reduced datasets, our ne
 
 An added bonus is that with a 2 feature space, we can visualize our model’s decision boundaries and performance with these best case hyperparameters:
 
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/35.embed" height="525" width="100%"></iframe>
+
 The round shape of the model’s learned decision boundaries are due to the radial basis function kernel. On the other hand, a linear kernel would cause the decision boundaries to be straight lines.
 
 Now, for binary classification, LDA will always compress the dataset into one feature. Performing a similar cross validation analysis on this single feature dataset, we found that the best hyperparameters for deciding between “Win” and “Not Win” were a linear kernel with C=0.45, which yields a testing accuracy of 75.0%! It’s incredible that we can achieve this accuracy by looking at a single feature! These binary classification results are on par with our Neural Net’s performance.
 
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/39.embed" height="525" width="100%"></iframe>
 
 ### How did it compare?
 Of all the classifiers applied to our model, SVM ranks the best in both binary and ternary classification. This is due to the pairing of LDA and our linear kernel with our SVM. Traditionally a large number of features is greatly advantageous to the optimization of SVM classification, but in this case, we have been able to reduce our features down to one highly linear feature. Applying LDA to our feature set has allotted us with one very linear feature which has made the linear kernel SVM classification very simple. As a result, this has been our best model at predicting the result of a FIFA World Cup soccer game.
