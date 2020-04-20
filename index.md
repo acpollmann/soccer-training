@@ -78,9 +78,10 @@ A Random Forest, or Random Decision Tree, is a kind of classification algorithm.
 ### How did we implement it?
 We implemented a 30:70 test to train split on the data. Using the sklearn’s StandardScaler class, we standardized the features by removing the mean and scaling to unit variance. Then using sklearn’s RandomForestClassifier, we did a hyperparameter analysis. We found that the number of estimators were best around 90-120. There was no significant difference between using entropy or gini as the function to measure the quality of a split. An unlimited maximum depth performed best, and since we have a small dataset, computational cost was not a large tradeoff. Through these hyperparameters, we got testing score average of 57.7% for ternary classifciation and 69.3% for binary classification. 
 
+Before running our Random Forest classification, we did a feature importance analysis. 
 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/28.embed" height="525" width="100%"></iframe>
-Feature importance analysis
 
+We also explored how in-game features (e.g. possession, offsides, sprints, fouls committed, etc.), compared to out-of-game features (e.g. FIFA rank, team value, no. of Players ranked in the top 100) when it comes to classification. To our surprise, out-of-game features were not as successful as we had anticipated. It is comforting to know that money and team prestige cannot buy a World Cup victory. The outcome comes down to the match itself, which is another reason why these games are so hard to predict.
 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/29.embed" height="525" width="100%"></iframe>
 
 ### How did it compare?
