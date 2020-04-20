@@ -120,7 +120,7 @@ We used the default implementation from Sklearn.ensemble for our predictions. To
 The key parameters of our classifier are the base estimator, number of estimators and learning rate. The base estimator is the model used for the “weak learners” used to cast their votes and make up the “strong classifier” prediction. In this implementation we used decision trees as they yielded the best results. The number of estimators represents the number of weak models to be trained iteratively, which we hyper parametrized to be 50, 75, or 100. Lastly, the learning rate relates to how much the weights for the weak predictions are updated at every iteration. Using a large learning rate (such as ⍺ = 1) leads to big changes every iteration and higher chances of convergence in fewer iterations, however we risk losing the global optimum point for the classifier, therefore we also hyper parametrized alpha to be 0.1, 0.3, 0.5, or 1.
 
 Confusion matrix for ternary classification using XGBoost:
-<img src="https://raw.githubusercontent.com/acpollmann/soccer-training/master/images/xgboostconfmatrix.png", width="500", align="middle">
+<img src="https://raw.githubusercontent.com/acpollmann/soccer-training/master/images/xgboostconfmatrix.png" width="500" align="middle">
 
 ### How did it compare?
 The best results were obtained for the XGboost model trained on 100 estimators at a learning rate of 0.1, also using all features. We noticed that increasing the number of estimators or decreasing the learning rate did not correlate to accuracy improvements, so we determined this combination of parameters to be our “optimum solution”. With this model we were able to achieve a 74.1% accuracy during testing for a binary classification (“Win” vs. “Not Win”) and a 62.9% accuracy for testing when applied to a ternary classification (“Win” vs. “Draw” vs. “Lose”), all implementations using a 30-70 training/testing split. We found that modifying parameters beyond this point did not lead to improved results. These results puts our XGboost attempt as the third highest performing model, only behind the SVM and the Neural Net implementations.
@@ -137,7 +137,7 @@ Initially, our analysis determined that a linear kernel with C=1.1 was the best,
 Performing the same analysis as before on both of these reduced datasets, our new best hyperparameters for ternary classification were a radial basis function kernel with C=0.55, which yield a testing score of 64.6%! This is a 5% improvement, by using 2 features instead of 22! 
 
 Confusion matrix for ternary classification using SVM with LDA:
-<img src="https://raw.githubusercontent.com/acpollmann/soccer-training/master/images/rbfSVCConfMatrix.png" width="500", align="middle">
+<img src="https://raw.githubusercontent.com/acpollmann/soccer-training/master/images/rbfSVCConfMatrix.png" width="500" align="middle">
 
 An added bonus is that with a 2 feature space, we can visualize our model’s decision boundaries and performance with these best case hyperparameters:
 
