@@ -119,8 +119,8 @@ We used the default implementation from Sklearn.ensemble for our predictions. To
 
 The key parameters of our classifier are the base estimator, number of estimators and learning rate. The base estimator is the model used for the “weak learners” used to cast their votes and make up the “strong classifier” prediction. In this implementation we used decision trees as they yielded the best results. The number of estimators represents the number of weak models to be trained iteratively, which we hyper parametrized to be 50, 75, or 100. Lastly, the learning rate relates to how much the weights for the weak predictions are updated at every iteration. Using a large learning rate (such as ⍺ = 1) leads to big changes every iteration and higher chances of convergence in fewer iterations, however we risk losing the global optimum point for the classifier, therefore we also hyper parametrized alpha to be 0.1, 0.3, 0.5, or 1.
 
-![xgboostconfmatrix.png](https://raw.githubusercontent.com/acpollmann/soccer-training/master/images/xgboostconfmatrix.png)
-
+Confusion matrix for ternary classification using XGBoost:
+<image source="https://raw.githubusercontent.com/acpollmann/soccer-training/master/images/xgboostconfmatrix.png", width = "400">
 
 ### How did it compare?
 The best results were obtained for the XGboost model trained on 100 estimators at a learning rate of 0.1, also using all features. We noticed that increasing the number of estimators or decreasing the learning rate did not correlate to accuracy improvements, so we determined this combination of parameters to be our “optimum solution”. With this model we were able to achieve a 74.1% accuracy during testing for a binary classification (“Win” vs. “Not Win”) and a 62.9% accuracy for testing when applied to a ternary classification (“Win” vs. “Draw” vs. “Lose”), all implementations using a 30-70 training/testing split. We found that modifying parameters beyond this point did not lead to improved results. These results puts our XGboost attempt as the third highest performing model, only behind the SVM and the Neural Net implementations.
@@ -138,15 +138,13 @@ Performing the same analysis as before on both of these reduced datasets, our ne
 
 An added bonus is that with a 2 feature space, we can visualize our model’s decision boundaries and performance with these best case hyperparameters:
 
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/35.embed" height="525" width="100%"></iframe>
+![SVCwLDADecisionBoundaries.png](https://raw.githubusercontent.com/acpollmann/soccer-training/master/images/SVCwLDADecisionBoundaries.png)
 
 The round shape of the model’s learned decision boundaries are due to the radial basis function kernel. On the other hand, a linear kernel would cause the decision boundaries to be straight lines.
 
 Now, for binary classification, LDA will always compress the dataset into one feature. Performing a similar cross validation analysis on this single feature dataset, we found that the best hyperparameters for deciding between “Win” and “Not Win” were a linear kernel with C=0.45, which yields a testing accuracy of 75.0%! It’s incredible that we can achieve this accuracy by looking at a single feature! These binary classification results are on par with our Neural Net’s performance.
 
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/39.embed" height="525" width="100%"></iframe> ![rbfSVCConfMatrix.png](https://raw.githubusercontent.com/acpollmann/soccer-training/master/images/rbfSVCConfMatrix.png)
-
-![SVCwLDADecisionBoundaries.png](https://raw.githubusercontent.com/acpollmann/soccer-training/master/images/SVCwLDADecisionBoundaries.png)
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~acpoll/39.embed" height="525" width="400"></iframe> <img src="https://raw.githubusercontent.com/acpollmann/soccer-training/master/images/rbfSVCConfMatrix.png" width="400">
 
 ### How did it compare?
 Of all the classifiers applied to our model, SVM ranks the best in both binary and ternary classification. This is due to the pairing of LDA and our linear kernel with our SVM. Traditionally a large number of features is greatly advantageous to the optimization of SVM classification, but in this case, we have been able to reduce our features down to one highly linear feature. Applying LDA to our feature set has allotted us with one very linear feature which has made the linear kernel SVM classification very simple. As a result, this has been our best model at predicting the result of a FIFA World Cup soccer game.
