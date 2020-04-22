@@ -16,7 +16,7 @@ A model that accurately predicts a game's outcome as well as the most important 
 
 ### What's Our Goal?
 
-We are analyzing the most important statistics that correlate the strongest with winning a soccer match and using the data from previous World Cup's (2010, 2014, and 2018) to predict the outcomes of future soccter matches.
+We are analyzing the most important statistics that correlate the strongest with winning a soccer match and using the data from previous World Cup's (2010, 2014, and 2018) to predict the outcomes of soccer matches.
 
 # **Data**
 
